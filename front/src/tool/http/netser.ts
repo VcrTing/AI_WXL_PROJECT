@@ -1,6 +1,7 @@
 import { NET_ERRORS_TXT } from "@/conf/conf-net";
 import { _TYPE_OBJECT, is_str } from "../util/typed";
 import { is_nice_one, must_int } from "../util/valued";
+import { for_net_when_401 } from "@/app/for/for_auth";
 
 const __HTTP_CODE_ERROR: number = 500
 const __HTTP_CODE_SAFE: number = 399
@@ -37,6 +38,7 @@ const ser_me_code = (src: ONE, tag: string): boolean => {
             else if (code === __HTTP_CODE_TOKEN_FAIL) {
                 console.log('-------------- 处理 401 --------------')
                 // for_net_when_401(tag)
+                for_net_when_401(tag)
                 return true
             }
             else if (code === __HTTP_CODE_ERROR) {

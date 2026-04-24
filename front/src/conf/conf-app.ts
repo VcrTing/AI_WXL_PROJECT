@@ -43,3 +43,7 @@ export const APP_BAR = <CoAppBottomBarItem[]> [
         }
     },
 ]
+
+// 登录的 PAN
+
+export const APP_PAN_LOGIN = <ElePanConf>{ idx: 9998, h: '100vh', dirc: 'b', opacity: 0.2, close: false }

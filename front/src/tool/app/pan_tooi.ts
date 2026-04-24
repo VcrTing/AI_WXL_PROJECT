@@ -23,7 +23,7 @@ const grow_z_index = (idx: number) => {
 
 const hui_is_hui = (hui: ElePanConf) => !hui.kiii // hui.kiii ? false : true
 
-const generate_a_def = (idx: number, orientation: ORIENTATION, conf: ElePanConf, clazz: string): ElePan => ({
+const generate_pan_def = (idx: number, orientation: ORIENTATION, conf: ElePanConf, clazz: string): ElePan => ({
     iive: true,
     show: false,
 
@@ -73,19 +73,26 @@ const insert_and_open_def = async (conf: ElePanConf) => {
         // await close_pan(idx)
     } 
     else {
-        apps.pan_insert( (__open_pan( generate_a_def(conf.idx, conf.dirc, conf, '') )) )
+        apps.pan_insert( (__open_pan( generate_pan_def(conf.idx, conf.dirc, conf, '') )) )
     }
 }
 const open = (conf: ElePanConf) => insert_and_open_def(conf)
+
+const generate_conf = (idx: number) => {
+    return <ElePanConf>{
+        idx, opacity: 0.4, dirc: 'b', close: false
+    }
+}
 
 // 所有有关 PAN 的操作都在这
 export default {
     ioc,
     has_hui,
-    generate_a_def,
+    generate_pan_def,
 
     open,
-    close
+    close,
+    generate_conf
 }
 
 

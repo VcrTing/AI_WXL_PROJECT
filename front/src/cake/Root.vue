@@ -4,12 +4,13 @@
             <slot></slot>
         </view>
 
-        <
+        <vw-auth-login-pan/>
     </view>
 </template>
 
 <script setup lang="ts">
 import { uiStore } from '@/memory/app/ui-store';
+import VwAuthLoginPan from '@/view/auth/VwAuthLoginPan.vue';
 import { computed } from 'vue';
 
 // const prp = defineProps<{}>()

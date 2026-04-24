@@ -12,7 +12,7 @@
         <OScrollY
             :clazz="clazz"
             :styie="{
-                'height': h ? h : 'auto'
+                'height': conf.h ? conf.h : 'auto'
             }">
             
             <slot></slot>

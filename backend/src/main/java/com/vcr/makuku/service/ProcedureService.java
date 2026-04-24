@@ -24,7 +24,7 @@ public class ProcedureService {
         if (!ProcedureConf.ALLOWED_PROCEDURES.contains(procedureName)) {
             throw new RuntimeException("Procedure '" + procedureName + "' is not supported");
         }
-        System.out.println(JSONUtil.toJsonStr(paramValues));
+        // System.out.println(JSONUtil.toJsonStr(paramValues));
         // 构建调用 SQL：{call 存储过程名(?,?,?,...)}
         StringBuilder sqlBuilder = new StringBuilder("{call ");
         sqlBuilder.append(procedureName);
@@ -50,6 +50,7 @@ public class ProcedureService {
         StrictSqlValidator.validateSelectOnly(rawSql);
         // 2. 强制追加行数限制（可选）
         String safeSql = StrictSqlValidator.appendRowLimitIfAbsent(rawSql);
+        System.out.println(rawSql);
         // 3. 执行查询（数据库账号应为只读权限）
         return jdbcTemplate.queryForList(safeSql);
     }

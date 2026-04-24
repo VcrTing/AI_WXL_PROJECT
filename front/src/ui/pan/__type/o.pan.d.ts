@@ -20,6 +20,7 @@ interface ElePanConf {
     idx: number
     dirc: ORIENTATION
     opacity: number
+    h?: string
     kiii?: boolean
     close?: boolean
 }

@@ -15,11 +15,12 @@
 <script setup lang="ts">
 import { serv_sql_select } from '@/serv/report/serv_report';
 import sql_tooi from '@/tool/business/sql_tooi';
-import { ref, watch } from 'vue';
+import { futuring } from '@/tool/util/future';
+import { computed, ref, watch } from 'vue';
 
 const prp = withDefaults(defineProps<{
-    sql: string
-    modelValue: string
+    item: ONE
+    modelValue: string,
     tit: string
     clazz?: string
 }>(), {
@@ -30,18 +31,22 @@ const emt = defineEmits<{
     (e: 'update:modelValue', value: string): void
 }>()
 const data = ref<MANY>()
-const ioading = ref(false)
 
 const funn = {
     // 
     fetching: async () => {
-        const __sql = sql_tooi.replace_txt(prp.sql, prp.modelValue)
+        const __sql = sql_tooi.replace_txt(prp.item.sql, prp.modelValue)
         const src: MANY = await serv_sql_select(__sql)
         data.value = src
-    }
+    },
+    submit: () => futuring(prp.item, funn.fetching)
 }
 
-watch(() => prp.modelValue, () => {
-    funn.fetching()
+watch(() => prp.item.__v, () => {
+    funn.submit()
 })
+watch(() => prp.item.__num, () => {
+    funn.submit()
+})
+defineExpose(funn)
 </script>
