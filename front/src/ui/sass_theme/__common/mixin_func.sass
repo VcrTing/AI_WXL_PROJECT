@@ -1,0 +1,22 @@
+@use '../__conf' as *;
+@use '../__tool_for_my_common' as *
+    
+@use "sass:map";
+
+@mixin thm-txt($cmap) 
+    color: map.get($cmap, "n")
+    @include hv()
+        color: map.get($cmap, "hv")
+    @include fcs()
+        color: map.get($cmap, "fcs")
+
+@mixin thm-txt-imp($cmap) 
+    color: map.get($cmap, "n") !important
+    @include hv()
+        color: map.get($cmap, "hv") !important
+    @include fcs()
+        color: map.get($cmap, "fcs") !important
+
+//
+@mixin thm-f-c($cmap)
+    @include app-f-c(map.get($cmap, "n"), map.get($cmap, "hv"), map.get($cmap, "fcs"))

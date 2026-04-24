@@ -1,0 +1,34 @@
+
+// 默认
+// 默认样式对 scroll 不起效果
+.pan-t,
+.pan-i,
+.pan-r,
+.pan-b
+    min-width: 10rem
+
+.pan-r, .pan-i
+    max-width: 100vw // calc( 200px + 20vw )
+
+.pan-t, .pan-b
+    max-height: 100vh
+    min-height: calc( 3em + 5vh )
+
+// 正常 PAN
+// 宽度使用自适应
+.pan-r, .pan-i
+    // 
+.pan-t, .pan-b
+    // height: 30vh
+
+// 小型 PAN
+.pan-r, .pan-i
+    //
+.pan-t-s, .pan-b-s
+    // height: 20vh
+
+// 大型 PAN
+.pan-r, .pan-i
+    //
+.pan-t-x1, .pan-t-x1
+    height: calc( 30vh + 270px )

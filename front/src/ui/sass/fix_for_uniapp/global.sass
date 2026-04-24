@@ -1,0 +1,56 @@
+
+// 全局样式定义
+page, uni-page-body 
+  height: 100%
+  box-sizing: border-box
+  overflow-x: hidden
+  overflow-y: scroll
+  border-width: 0px
+  &::-webkit-scrollbar
+      width: 1px
+      border-radius: 10px
+      background: transparent
+  
+page, uni-page-body, 
+view, div, text, uni-input, uni-textarea, 
+uni-button, button, input, textarea, scroll-view
+  box-sizing: border-box
+  outline: none !important
+  
+scroll-view, .uni-scroll-view, .uni-scroll-view-content
+  border-radius: inherit
+  &::-webkit-scrollbar
+    display: none
+    width: 0px
+    height: 0px
+    border-radius: 10px
+    background: transparent
+
+// 重绘 uni 样式
+.uni-app--showtabbar uni-page-wrapper::after
+  display: none !important
+
+uni-tabbar
+  display: none !important
+
+uni-textarea, textarea
+  width: 100%
+
+uni-input, uni-textarea, textarea, input
+  font-size: 1em
+  &, &:hover, &:active, &:focus, &:focus-visible
+    outline: none
+  
+uni-button
+  font-size: 1em !important
+  margin: 0px 
+  padding: 0px
+  padding-left: 0px
+  padding-right: 0px
+  border-radius: 0px
+  overflow: visible 
+  background: transparent 
+  border: 0px solid transparent
+  &::after
+    border: 0px solid transparent
+    visibility: hidden

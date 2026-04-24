@@ -1,0 +1,22 @@
+@use '../__conf' as *
+// margin
+
+@each $n, $nn in $dir
+  @each $k, $v in $dss
+    .m#{n}#{$k}
+      margin-#{nn}: $v
+
+.mx-rev
+    margin-left: -$ds
+    margin-right: -$ds
+  
+  
+@each $k, $v in $dss
+  .mx#{$k}
+    margin-left: $v
+    margin-right: $v
+    
+@each $k, $v in $dss
+  .my#{$k}
+    margin-top: $v
+    margin-bottom: $v

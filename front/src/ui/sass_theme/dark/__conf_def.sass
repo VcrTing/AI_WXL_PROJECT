@@ -1,0 +1,32 @@
+@use './__conf_txt' as *
+// 主题按钮
+
+// 按钮文字
+$c-def-btn: $tix
+$c-def-btn-hv: $tix-fcs
+$c-def-btn-fcs: $tix-fcs
+// 按钮字体阴影
+$c-def-btn-sdo: #f2f4f738
+// 主题字体阴影
+$def-sdo: #f2f4f738
+
+// 主色
+$def: #484a4d98 
+$def-hv: #54565998 
+$def-fcs: #67696c76
+$def-shd: #67696c46 
+    
+// 轻色
+$def-iht: #fff2a8
+$def-iht-hv: #ffe044 
+$def-iht-fcs: #f3d436 
+$def-iht-shd: #ffec90a8
+
+// MAP
+$btn-def-vars: (
+    "bg": ("n": $def, "hv": $def-hv, "fcs": $def-fcs, "shd": $def-shd),
+    "bd": ("n": $def, "hv": $def-hv, "fcs": $def-fcs),
+    "c": ("n": $c-def-btn, "hv": $c-def-btn-hv, "fcs": $c-def-btn-fcs, "sdo": $c-def-btn-sdo),
+    "c-out": ("n": $def, "hv": $def-hv, "fcs": $def-fcs, "sdo": $def-sdo),
+    "iht": ("n": $def-iht, "hv": $def-iht-hv, "fcs": $def-iht-fcs, "shd": $def-iht-shd)
+)

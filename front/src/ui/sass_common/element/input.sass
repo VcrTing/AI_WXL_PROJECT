@@ -1,0 +1,23 @@
+
+@use '../__conf' as *;
+@use '../__mixin' as *
+
+._inp
+    box-sizing: border-box
+    // display: inline-block
+    user-select: none
+    @include app-bd()
+
+.inp
+    @include app-ih()
+    @extend ._inp
+    &
+        outline: none !important
+
+.inp
+    @include app-ts($aii-ts-d)
+
+// 
+.inp-app
+    @include app-mh()
+    width: 100%

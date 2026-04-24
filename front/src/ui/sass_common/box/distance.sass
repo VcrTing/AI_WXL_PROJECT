@@ -1,0 +1,53 @@
+
+@use '../__conf' as *
+@use '../__mixin' as *
+
+.px-row
+    padding-left: $ds-row-x
+    padding-right: $ds-row-x
+
+.pi-row
+    padding-left: $ds-row-x
+.pr-row
+    padding-right: $ds-row-x
+
+.pt-row
+    padding-top: $ds-row-y
+.pb-row
+    padding-bottom: $ds-row-y
+.py-row
+    padding-top: $ds-row-y
+    padding-bottom: $ds-row-y
+
+.row
+    margin-left: $ds-row-x-s-rev
+    margin-right: $ds-row-x-s-rev
+    padding-left: 0rem
+    padding-right: 0rem
+    
+.px-row-s
+    padding-left: $ds-row-x-s
+    padding-right: $ds-row-x-s
+
+.pi-col
+    padding-left: $ds-col-x
+.pr-col
+    padding-right: $ds-col-x
+.px-col
+    padding-left: $ds-col-x
+    padding-right: $ds-col-x
+
+.pt-col
+    padding-top: $ds-col-y
+.pb-col
+    padding-bottom: $ds-col-y
+.py-col
+    padding-top: $ds-col-y
+    padding-bottom: $ds-col-y
+
+.con
+    @include app-br()
+    padding-left: $ds-col-x
+    padding-right: $ds-col-x
+    padding-top: $ds-col-y
+    padding-bottom: $ds-col-y

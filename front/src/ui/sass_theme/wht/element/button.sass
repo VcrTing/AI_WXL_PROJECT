@@ -1,0 +1,37 @@
+
+@use '../../__conf' as *;
+
+.c-wht-shd
+    text-shadow: $aii-c-shd-x $aii-c-shd-y $aii-c-shd-r rgba(0, 0, 0, 0.12)
+
+//
+.fx-aii-btn-wht
+    &:hover
+        background: rgba(255, 255, 255, 0.382)
+    &:active, &:focus, &:focus-visible
+        background: rgba(255, 255, 255, 0.5)
+        border-color: rgba(255, 255, 255, 1)
+        box-shadow: 0px 0px 0px $aii-shd-w rgba(255, 255, 255, 0.16)
+.btn-wht,
+.btn-wht-txt
+    color: #fff
+    @extend .c-wht-shd
+    @extend .fx-aii-btn-wht
+.btn-wht
+    background: rgba(255, 255, 255, 0.24)
+
+//
+.fx-aii-btn-wht-s
+    &:hover
+        background: rgba(255, 255, 255, 0.22)
+    &:active, &:focus, &:focus-visible
+        background: rgba(255, 255, 255, 0.28)
+        border-color: rgba(255, 255, 255, 1)
+        box-shadow: 0px 0px 0px $aii-shd-w rgba(255, 255, 255, 0.12)
+.btn-wht-s,
+.btn-wht-txt
+    color: #fff
+    @extend .c-wht-shd
+    @extend .fx-aii-btn-wht-s
+.btn-wht-s
+    background: rgba(255, 255, 255, 0.12)

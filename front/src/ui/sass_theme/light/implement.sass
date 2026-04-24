@@ -1,0 +1,58 @@
+
+@use './__conf_bc' as *;
+@use './__conf_bg' as *;
+@use './__conf_txt' as *;
+@use './__conf_pri' as *;
+@use './__conf_def' as *;
+@use './__conf_wht' as *;
+@use '../__mixin' as *
+    
+@use "sass:map";
+
+.tih, .tix, .tid, .tiw, .tin, .tis, .tit, .sus
+    @include hv()
+        transform: scale(1.024)
+    @include fcs()
+        transform: scale(0.987)
+
+.o-light
+    // 按钮
+    @include generate-theme-btn-n-fx("def", 
+        map.get($btn-def-vars, "bg"), 
+        map.get($btn-def-vars, "bd"), 
+        map.get($btn-def-vars, "c"), 
+        map.get($btn-def-vars, "c-out"), 
+        map.get($btn-def-vars, "iht"))
+    @include generate-theme-btn-n-fx("pri", 
+        map.get($btn-pri-vars, "bg"), 
+        map.get($btn-pri-vars, "bd"), 
+        map.get($btn-pri-vars, "c"), 
+        map.get($btn-pri-vars, "c-out"), 
+        map.get($btn-pri-vars, "iht"))
+    @include generate-theme-btn-n-fx("wht", 
+        map.get($btn-wht-vars, "bg"), 
+        map.get($btn-wht-vars, "bd"), 
+        map.get($btn-wht-vars, "c"), 
+        map.get($btn-wht-vars, "c-out"), 
+        map.get($btn-wht-vars, "iht"))
+
+    // 背景颜色
+    @each $name, $colors in $bg-color-vars
+        .bg-#{$name}
+            // background: map.get($colors, "n")
+            @include bg-n-fx-map($colors)
+    // 边框颜色
+    @each $name, $colors in $bc-color-vars
+        .bc-#{$name}
+            @include bc-n-fx-map($colors)
+        .bc-#{$name}-b
+            // border-color: map.get($colors, "n")
+            @include bc-b-fx-map($colors)
+    // 主文字颜色
+    &
+        @include thm-txt(map.get($txt-color-vars, "tix"))
+    @each $name, $colors in $txt-color-vars
+        .#{$name}
+            @include thm-txt($colors)
+        .#{$name}-imp
+            @include thm-txt-imp($colors)

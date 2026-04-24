@@ -1,0 +1,42 @@
+
+
+@use './common' as *
+
+.o-app-bottom-bar
+    bottom: 0
+    
+.app-bottom-bar-item-icon
+    position: relative
+    height: 1.3em !important
+    &::after
+        position: absolute
+        width: 100%
+        height: 100%
+ 
+$abb-die: transparent
+$abb-die-hv: transparent
+$abb-die-fcs: transparent
+
+.app-bottom-bar-item
+    width: $mw-app-bottom-bar-item
+    height: $mh-app-bottom-bar-item
+    // color: $abb-die
+    &:hover
+        // color: $abb-die-hv
+    &:active, &:focus, &:focus-visible
+        // color: $abb-die-fcs
+
+.app-bottom-bar-item-iive
+    .app-bottom-bar-item-icon
+        transform: scale(1)
+    .app-bottom-bar-item-txt
+        //
+// =========================================================
+.app-bottom-bar-btn
+    .app-bottom-bar-item-icon
+        width: 2.4em !important
+        height: 2.4em !important
+        border-radius: 100%
+        display: flex
+        align-items: center
+        justify-content: center

@@ -1,0 +1,41 @@
+@use 'sass:math';
+
+@use '../__conf' as *;
+@use '../__mixin' as *
+@use '../ani/ani_ux' as *
+
+._btn
+    @include app-btn()
+
+.btn
+    @include app-btn()
+.tag
+    @include app-ih()
+    @include app-btn()
+    @include hv()
+        transform: scale(1.024)
+    @include fcs()
+        transform: scale(0.987)
+        @include app-ts($aii-ts-d-t)
+uni-button, .btn
+    outline: none !important
+
+.btn
+    @include app-ts($aii-ts-d-x2)
+    @include app-btn-ls()
+    &::after
+        content: none
+
+.tag
+    @include app-ts($aii-ts-d)
+
+// 
+.btn-app
+    @include app-mh()
+    border-radius: 7em
+    width: 100%
+    display: inline-flex !important
+    align-items: center
+    justify-content: center
+    &::after
+        border-radius: 7em

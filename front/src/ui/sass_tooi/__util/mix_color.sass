@@ -1,0 +1,67 @@
+
+@use "sass:map";
+
+@mixin pure()
+    background: transparent
+    border-color: transparent
+    outline-color: transparent
+    @content
+
+@mixin pure-aii()
+    &, &::after, &::before
+        background: transparent
+        border-color: transparent
+        outline-color: transparent
+        box-sizing: border-box
+        padding: 0
+        margin: 0
+        @content
+
+@mixin c-n-fx($v, $v-hv, $v-fcs)
+    color: $v
+    &:hover
+        color: $v-hv
+    &:focus, &:active, &:focus-visible
+        color: $v-fcs
+
+@mixin bg-n-fx($v, $v-hv, $v-fcs)
+    background: $v
+    &:hover
+        background: $v-hv
+    &:focus, &:active, &:focus-visible
+        background: $v-fcs
+
+@mixin bg-n-fx-map($map)
+    background: map.get($map, "n")
+    @if map.has-key($map, "hv")
+        &:hover
+            background: map.get($map, "hv")
+    @if map.has-key($map, "fcs")
+        &:focus, &:active, &:focus-visible
+            background: map.get($map, "fcs")
+    
+@mixin bc-n-fx($v, $v-hv, $v-fcs)
+    border-color: $v
+    &:hover
+        border-color: $v-hv
+    &:focus, &:active, &:focus-visible
+        border-color: $v-fcs
+
+@mixin bc-n-fx-map($map)
+    border-color: map.get($map, "n")
+    @if map.has-key($map, "hv")
+        &:hover
+            border-color: map.get($map, "hv")
+    @if map.has-key($map, "fcs")
+        &:focus, &:active, &:focus-visible
+            border-color: map.get($map, "fcs")
+
+@mixin bc-b-fx-map($map)
+    border-bottom-color: map.get($map, "n")
+    @if map.has-key($map, "hv")
+        &:hover
+            border-bottom-color: map.get($map, "hv")
+    @if map.has-key($map, "fcs")
+        &:focus, &:active, &:focus-visible
+            border-bottom-color: map.get($map, "fcs")
+    

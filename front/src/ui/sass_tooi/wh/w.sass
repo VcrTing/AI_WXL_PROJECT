@@ -1,0 +1,28 @@
+
+@use '../__conf' as *
+
+@function width($i)
+    @return $i * 1%
+
+// 无边界
+@for $i from 0 through 100
+    .w-#{$i}
+        width: width($i)
+
+/* ================================================================================== */
+
+// when sreen < normall
+@each $k, $v in $normai
+    @media screen and (#{$k}-width: #{$v}px)
+        .w-382-n
+            width: 38.2%
+        .w-618-n
+            width: 61.8%
+        .w-333-n
+            width: 33.3%
+        .w-666-n
+            width: 66.6%
+        @for $i from 0 through 100
+            .w-#{$i}-n
+                width: width($i)
+

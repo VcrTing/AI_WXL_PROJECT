@@ -1,0 +1,50 @@
+
+@use 'sass:math';
+@use '../__conf' as *;
+@use '../__tool_for_my_common' as *
+
+@mixin app-br()
+    border-radius: $aii-br
+@mixin app-br-s()
+    border-radius: $aii-br-s
+
+@mixin app-ih()
+    line-height: $aii-ih
+
+@mixin app-bd()
+    border: $aii-bd-w $aii-bd-s transparent
+
+@mixin app-mh()
+    min-height: $aii-mh
+.app-mh
+    @include app-mh()
+
+@mixin app-btn-pure()
+    outline-color: transparent
+    box-sizing: border-box
+    display: inline-block
+    text-align: center
+    user-select: none
+    cursor: pointer
+    @include app-bd()
+
+@mixin app-btn()
+    @include app-btn-pure()
+    @include app-ih()
+    @include hv()
+        transform: scale(1.024)
+    @include fcs()
+        transform: scale(0.987)
+        @include app-ts($aii-ts-d-s)
+
+$btn-font-ls: 0.064em
+
+@mixin app-btn-ls()
+    text-indent: math.div($btn-font-ls, 2)
+    letter-spacing: $btn-font-ls
+    
+@mixin app-ts($ts-d)
+    transition-duration: $ts-d
+    transition-property: $aii-ts-p
+    transition-timing-function: $aii-ts-tf
+    

@@ -1,0 +1,26 @@
+{
+  "pages": [
+    { "path": "pages/home/home", "type": "home" },
+    { "path": "pages/home/ui", "type": "ui" },
+    { "path": "pages/user/user", "type": "user" },
+    { "path": "pages/index", "type": "index" },
+    { "path": "pages/mark/mark", "type": "mark" }
+  ],
+  "globalStyle": {
+    "backgroundColor": "@bgColor",
+    "backgroundColorBottom": "@bgColorBottom",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "navigationBarTitleText": "Uni Creator",
+    "navigationStyle": "custom"
+  },
+  "subPackages": [],
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^u-(.*)": "uview-pro/components/u-$1/u-$1.vue"
+    }
+  }
+}

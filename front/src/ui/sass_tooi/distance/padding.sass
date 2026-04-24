@@ -1,0 +1,39 @@
+@use '../__conf' as *
+@use '../__util' as *
+
+// padding
+
+@mixin ppp($name_dir_s, $name_dir, $name_v, $v)
+  .p#{$name_dir_s}#{$name_v}
+    padding-#{$name_dir}: $v
+
+@each $n, $nn in $dir
+  @each $k, $v in $dss
+    @include ppp($n, $nn, $k, $v)
+
+// X
+@mixin ppx($name_v, $v)
+  .px#{$name_v}
+    padding-left: $v
+    padding-right: $v
+@each $k, $v in $dss
+  @include ppx($k, $v)
+
+// Y
+@mixin ppy($name_v, $v)
+  .py#{$name_v}
+    padding-top: $v
+    padding-bottom: $v
+@each $k, $v in $dss
+  @include ppy($k, $v)
+
+//   
+.pxx
+  @include ds-pd("x", 12px)
+  @include respond("pad")
+    @include ds-pd("x", 120px)
+  @include respond("n")
+    @include ds-pd("x", 48px)
+    
+    
+    

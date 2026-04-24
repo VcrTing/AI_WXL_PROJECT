@@ -1,0 +1,15 @@
+
+@use "sass:map";
+
+@use '../__conf' as *
+
+@mixin respond($device)
+    @if $device == "pad" or $device == "p"
+        @media screen and (max-width: map.get($pad, "max"))
+            @content
+    @else if $device == "normal" or $device == "n" 
+        @media screen and (max-width: map.get($normai, "max"))
+            @content
+    @else if $device == "window" or $device == "w" 
+        @media screen and (min-width: map.get($window, "min"))
+            @content

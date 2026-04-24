@@ -1,0 +1,11 @@
+@use '../__tool_for_my_common' as *
+
+@mixin app-fx-shd($w, $c)
+    box-shadow: 0px 0px 0px $w $c
+
+@mixin app-f-c($n, $hv, $fcs)
+    color: $n
+    @include hv()
+        color: $hv
+    @include fcs()
+        color: $fcs

@@ -1,0 +1,39 @@
+
+
+@keyframes o_ing
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+.o-ing-wp
+    width: 1em
+    height: 1em
+    z-index: 1
+    position: relative
+.o-ing
+    position: absolute
+    z-index: 10
+    left: 50%
+    top: 50%
+    width: 1.24em
+    height: 1.24em
+    transform: translate(-50%, -50%)
+    .o-ing-in
+        width: 100%
+        height: 100%
+        border: 0.17em solid transparent
+        // border-top-color: transparent !important
+        border-radius: 100%
+
+        animation: o_ing 1s linear infinite
+
+
+.o-ing-wht
+    .o-ing-in
+        border-color: #fff
+
+.o-ing-wht, .o-ing-tit
+    .o-ing-in
+        border-right-color: transparent !important 
+        border-bottom-color: transparent !important

@@ -1,0 +1,52 @@
+
+server:
+  port: 7070
+
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        master:
+          url: jdbc:sqlserver://113.105.84.36:199;DatabaseName=jeecgboot;encrypt=false;trustServerCertificate=false;sslProtocol=TLSv1
+          username: sa
+          password: Ycsql20210519a
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          type: com.alibaba.druid.pool.DruidDataSource
+        source1:
+          url: jdbc:sqlserver://113.105.84.36:199;DatabaseName=SZYC;encrypt=false;trustServerCertificate=false;sslProtocol=TLSv1
+          username: sa
+          password: Ycsql20210519a
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          type: com.alibaba.druid.pool.DruidDataSource
+
+  # 排除 Spring Boot 原生数据源自动配置（因为我们要用自定义动态数据源）
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - com.alibaba.druid.spring.boot3.autoconfigure.DruidDataSourceAutoConfigure
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1ms
+      timeout: 5000ms
+
+jwt:
+  secret: mySuperSecretKeyForJwtSigningThatIsAtLeast256BitsLongPleaseChangeIt
+  expiration: 86400000  # 24 小时，单位毫秒
+
+mybatis-plus:
+  mapper-locations: classpath*:/**/mapper/*Mapper.xml
+  global-config:
+    db-config:
+      logic-delete-field: deleted  # 全局逻辑删除字段名
+      logic-delete-value: 1       # 逻辑已删除值
+      logic-not-delete-value: 0   # 逻辑未删除值

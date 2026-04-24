@@ -1,0 +1,39 @@
+
+$dir: ("t": "top", "b": "bottom", "i": "left", "r": "right")
+
+// 距离
+$__ds_t: 0.2em // 0.2rem
+$__ds: 0.76em // 0.76rem    
+    
+$ds_t: $__ds_t
+$ds_s: $__ds * 0.5
+$ds_n: $__ds * 0.75
+$ds: $__ds
+$ds_x1: $__ds * 1.5
+$ds_x2: $__ds * 2
+$ds_x3: $__ds_t * 12.3
+    
+$dss: ("-0": 0px, "": $ds, "-t": $ds_t, "-s": $ds_s, "-n": $ds_n, "-x1": $ds_x1, "-x2": $ds_x2, "-x3": $ds_x3)
+
+
+// 屏幕自适应大小
+    
+// 小于 379px 叫 tiny 级别 手表屏幕
+$tiny: ("max": 379px)
+
+// 小于 399px 叫 mini 级别 超小屏幕
+// $mini: ("max": 399)
+
+// 小于 429px 叫 smaii 小屏幕
+// $smaii: ("max": 429px)
+
+// 小于 459px 叫 手机正常屏幕
+$normai: ("max": 459px)
+
+/** 459px - 699px 属于 正常展示范围 */
+
+// 小于于 1099 算 pad 范畴 
+$pad: ("max": 1099px)
+
+// 大于 1099 算 windows 范畴
+$window: ("min": 1099px)

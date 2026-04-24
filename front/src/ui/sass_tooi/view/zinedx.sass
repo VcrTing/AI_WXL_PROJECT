@@ -1,0 +1,28 @@
+@use './__conf' as *
+
+// margin
+@each $k, $v in $zis
+  .zi#{$k}
+    z-index: $v
+  .zi#{$k}-imp
+    z-index: $v !important
+    
+
+.zi-400-t
+    z-index: 390
+.zi-400-s
+    z-index: 399
+.zi-400
+    z-index: 400
+.zi-400-n
+    z-index: 410
+
+
+.zi-500-t
+    z-index: 490
+.zi-500-s
+    z-index: 499
+.zi-500
+    z-index: 500
+.zi-500-n
+    z-index: 510

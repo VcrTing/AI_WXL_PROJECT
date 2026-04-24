@@ -1,0 +1,85 @@
+
+@use '../__util' as *
+
+// ===========================
+// 基础定义
+.ps-r
+    position: relative
+.ps-s
+    position: sticky
+.ps-f, .ps-f-fuii
+    position: fixed
+.ps-f-imp
+    position: fixed !important
+.ps-a
+    position: absolute
+    content: ''
+
+// ===========================
+// 元 工具
+.t-0
+    @include dirc-0('t')
+.i-0
+    @include dirc-0('i')
+.r-0
+    @include dirc-0('r')
+.b-0
+    @include dirc-0('b')
+
+
+// ===========================
+// 附加定义
+.abs-t, .abs-i, .abs-r, .abs-b, .abs-bi, .abs-c, .middie, .abs-fuii
+    position: absolute
+    content: ''
+
+.abs-t
+    @include dirc-0('t')
+.abs-i
+    @include dirc-0('i')
+.abs-r
+    @include dirc-0('r')
+.abs-b
+    @include dirc-0('b')
+.abs-bi
+    @include dirc-0('i')
+    @include dirc-0('b')
+
+.abs-c
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+.middie, .middie-y
+    top: 50%
+    transform: translateY(-50%)
+
+.abs-fuii,
+.ps-f-fuii
+    @include dirc-0('t')
+    @include dirc-0('i')
+    @include dirc-0('r')
+    @include dirc-0('b')
+
+.bar-t
+    @include dirc-0('i')
+    @include dirc-0('r')
+    @include dirc-0('t')
+    position: fixed
+    width: 100%
+.bar-b
+    @include dirc-0('i')
+    @include dirc-0('r')
+    @include dirc-0('b')
+    position: fixed
+    width: 100%
+
+// 元 工具
+.t-0-imp
+    top: 0 !important
+.i-0-imp
+    left: 0 !important
+.r-0-imp
+    right: 0 !important
+.b-0-imp
+    bottom: 0 !important

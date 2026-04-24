@@ -1,0 +1,86 @@
+
+@use "sass:map";
+
+@use '../__conf' as *;
+@use '../__tool_for_my_common' as *
+@use './mixin_func' as *
+
+@mixin btn-shd($c)
+    @include app-fx-shd($aii-shd-w, $c)
+@mixin btn-fx-aii($__hv, $__fcs, $__shd)    
+    @include hv()
+        background: $__hv
+    @include fcs()
+        background: $__fcs
+        @include btn-shd($__shd)
+@mixin btn-fx-bd($__hv, $__fcs)    
+    @include hv()
+        border-color: $__hv
+    @include fcs()
+        border-color: $__fcs
+@mixin btn-txt-sdo($sdo)
+    text-shadow: $aii-c-shd-x $aii-c-shd-y $aii-c-shd-r $sdo
+@mixin btn-fx-txt-sdo($sdo) 
+    @include hv() 
+        text-shadow: $aii-c-shd-x $aii-c-shd-y $aii-c-shd-r $sdo
+    @include fcs()
+        text-shadow: $aii-c-shd-x $aii-c-shd-y $aii-c-shd-r $sdo
+
+// 主题按钮
+@mixin generate-theme-btn-n-fx($name, $map_bg, $map_bd, $map_c, $map_c_out, $map_iht)
+    $__bg_n: map.get($map_bg, "n")
+    $__bg_hv: map.get($map_bg, "hv")
+    $__bg_fcs: map.get($map_bg, "fcs")
+    $__bg_shd: map.get($map_bg, "shd")
+
+    .#{$name}
+        @include thm-txt($map_bg)
+    .#{$name}-imp
+        @include thm-txt-imp($map_bg)
+    .fx-aii-btn-#{$name}
+        @include btn-fx-aii($__bg_hv, $__bg_fcs, $__bg_shd) 
+    .fx-aii-btn-#{$name}-out
+        @include btn-fx-bd($__bg-hv, $__bg-fcs)
+        @include btn-fx-txt-sdo(map.get($map_c, "sdo"))
+        @include fcs()
+            @include btn-shd($__bg_shd)
+    //
+    .btn-#{$name}-txt
+        @include app-btn()
+        @include thm-txt($map_bg)
+        background: transparent
+        @include btn-fx-aii($__bg_hv, $__bg_fcs, $__bg_shd) 
+    .btn-#{$name}
+        @include app-btn()
+        background: map.get($map_bg, "n")
+        @include thm-txt($map_c)
+        @include btn-txt-sdo(map.get($map_c, "sdo"))
+        @include btn-fx-aii($__bg_hv, $__bg_fcs, $__bg_shd) 
+    .btn-#{$name}-out
+        @include app-btn()
+        @include thm-txt($map_c_out)
+        background-color: transparent  
+        border-color: $__bg_n
+        @include btn-fx-bd($__bg-hv, $__bg-fcs)
+        @include btn-fx-txt-sdo(map.get($map_c, "sdo"))
+        @include fcs()
+            @include btn-shd($__bg_shd)
+    .btn-#{$name}-iht
+        @include app-btn()
+        background: map.get($map_iht, "n")
+        @include thm-txt($map_c)
+        @include btn-txt-sdo(map.get($map_c, "sdo"))
+        @include btn-fx-aii(map.get($map_iht, "hv"), map.get($map_iht, "fcs"), map.get($map_iht, "shd")) 
+
+
+// 普通按钮
+@mixin generate-btn-n-fx($name, $__bg, $__bg-hv, $__bg-fcs, $__shd)
+    // 边框
+    .fx-aii-bd-#{$name}
+        @include btn-fx-bd($__bg-hv, $__bg-fcs)
+    //
+    .fx-aii-btn-#{$name}
+        @include btn-fx-aii($__bg-hv, $__bg-fcs, $__shd)
+    .btn-#{$name}
+        background: $__bg
+        @include btn-fx-aii($__bg-hv, $__bg-fcs, $__shd)

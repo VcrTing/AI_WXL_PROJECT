@@ -1,0 +1,27 @@
+
+@mixin ds-pd($x_or_y, $v)
+    @if $x_or_y == 'x'
+        padding-left: $v
+        padding-right: $v
+    @else if $x_or_y == 'y'
+        padding-top: $v
+        padding-bottom: $v
+    
+@mixin ds-mg($x_or_y, $v)
+    @if $x_or_y == 'x'
+        margin-left: $v
+        margin-right: $v
+    @else if $x_or_y == 'y'
+        margin-top: $v
+        margin-bottom: $v
+
+@mixin dirc-0($dirc)
+    @if $dirc == 'i'
+        left: 0
+    @else if $dirc == 'r'
+        right: 0
+    @else if $dirc == 't'
+        top: 0
+    @else if $dirc == 'b'
+        bottom: 0
+    
