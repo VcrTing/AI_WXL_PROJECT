@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CoCommonFilterBar: typeof import('./src/components/filter/CoCommonFilterBar.vue')['default']
     CoSearchContent: typeof import('./src/components/search/CoSearchContent.vue')['default']
     CoTable: typeof import('./src/components/table/CoTable.vue')['default']
     CoTip: typeof import('./src/components/tip/CoTip.vue')['default']

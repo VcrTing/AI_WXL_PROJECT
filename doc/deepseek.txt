@@ -1,0 +1,19 @@
+curl --location --request POST 'https://integrate.api.nvidia.com/v1/chat/completions' \
+--header 'Authorization: Bearer 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' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "model": "deepseek-ai/deepseek-v4-pro",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你是什么模型"
+      }
+    ],
+    "temperature": 1,
+    "top_p": 0.95,
+    "max_tokens": 16384,
+    "stream": true,
+    "chat_template_kwargs": {
+      "thinking": false
+    }
+  }'

@@ -6,4 +6,9 @@ interface StarpiPagerParam {
     total: number
 }
 
-type Pager = StarpiPagerParam
+interface PageParam {
+    page: number
+    pageSize: number
+}
+
+type Pager = PageParam // StarpiPagerParam

@@ -4,7 +4,9 @@
     { "path": "pages/home/ui", "type": "ui" },
     { "path": "pages/user/user", "type": "user" },
     { "path": "pages/index", "type": "index" },
-    { "path": "pages/mark/mark", "type": "mark" }
+    { "path": "pages/mark/mark", "type": "mark" },
+    
+    { "path": "pages/money/salary/salary_type", "type": "salary_type" }
   ],
   "globalStyle": {
     "backgroundColor": "@bgColor",

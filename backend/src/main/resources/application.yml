@@ -9,9 +9,9 @@ spring:
       strict: false
       datasource:
         master:
-          url: jdbc:sqlserver://113.105.84.36:199;DatabaseName=jeecgboot;encrypt=false;trustServerCertificate=false;sslProtocol=TLSv1
-          username: sa
-          password: Ycsql20210519a
+          url: jdbc:sqlserver://113.105.84.36:11433;DatabaseName=main;encrypt=false;trustServerCertificate=false;sslProtocol=TLSv1 #内网地址
+          username: sa2
+          password: Yc20210519a
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
           type: com.alibaba.druid.pool.DruidDataSource
         source1:
@@ -44,7 +44,7 @@ jwt:
   expiration: 86400000  # 24 小时，单位毫秒
 
 mybatis-plus:
-  mapper-locations: classpath*:/**/mapper/*Mapper.xml
+  mapper-locations: classpath*:/**/xml/*Mapper.xml
   global-config:
     db-config:
       logic-delete-field: deleted  # 全局逻辑删除字段名

@@ -31,7 +31,7 @@ public class ReportStoneController {
             );
             return ApiResult.success("调用成功", data);
         } catch (Exception e) {
-            return ApiResult.error(500, e);
+            return ApiResult.error(e);
         }
     }
 }

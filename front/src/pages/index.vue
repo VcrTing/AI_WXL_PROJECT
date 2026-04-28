@@ -1,12 +1,13 @@
 <template>
     <app-layout>
-        <vw-auth-login/>
+        <o-button @tap="uniRouter.gopg('home')">前往HOME</o-button>
     </app-layout>
 </template>
 
 <script setup lang="ts">
+import OButton from '@/cake/button/OButton.vue';
 import AppLayout from '@/cake/layout/AppLayout.vue';
-import VwAuthLogin from '@/view/auth/VwAuthLogin.vue';
+import uniRouter from '@/tool/uni/uni-router';
 
 // const prp = defineProps<{}>()
 

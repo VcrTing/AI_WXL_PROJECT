@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -24,10 +25,14 @@ public class XUser implements UserDetails {
     String username;
     String realname;
     String avatar;
+    String phone;
     String email;
 
     @TableLogic  // MyBatis-Plus 逻辑删除注解，deleted=0 表示未删除
     private Integer delFlag;
+    Date createdAt;
+    Date updatedAt;
+    String updatedBy;
 
     // UserDetails 方法实现
     @Override

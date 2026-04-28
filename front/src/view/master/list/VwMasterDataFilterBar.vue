@@ -65,27 +65,27 @@ const bar = ref([
     {
         sql: "select top 10 itemcode code from OITM where itemcode like '%#codeParam#%' order by  ItemCode",
         type: "search", ioading: false, __num: 0,
-        __v: '', k: 'ItemCode', label: '货号'
+        __v: '', k: 'ItemCode', label: '货号', placeholder: '请输入'
     },
     {
         sql: "",
         type: "timed", ioading: false, __num: 0,
-        __v: '', k: 'startTime', label: '开始时间'
+        __v: '', k: 'startTime', label: '开始时间', placeholder: '请输入'
     },
     {
         sql: "",
         type: "timed", ioading: false, __num: 0,
-        __v: '', k: 'endTime', label: '结束时间'
+        __v: '', k: 'endTime', label: '结束时间', placeholder: '请输入'
     },
     {
         sql: "", menu: [ { value: '2025', label: '2025' }, { value: '2026', label: '2026' }, { value: '2027', label: '2027' } ],
         type: "menu", ioading: false, __num: 0,
-        __v: '', k: 'U_NF', label: '年份'
+        __v: '', k: 'U_NF', label: '年份', placeholder: '请输入'
     },
     {
         sql: " select distinct U_LX code from OITM where isnull(U_LX,'')<>'' and U_LX like '%#codeParam#%' order by U_LX",
         type: "search", ioading: false, __num: 0,
-        __v: '', k: 'U_LX', label: '路线'
+        __v: '', k: 'U_LX', label: '路线', placeholder: '请输入'
     },
 ])
 

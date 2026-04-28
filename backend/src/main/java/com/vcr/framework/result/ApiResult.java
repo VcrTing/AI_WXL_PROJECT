@@ -34,6 +34,11 @@ public class ApiResult<T> {
         return new ApiResult<>(code, e.getMessage(), null);
     }
 
+    public static <R> ApiResult<R> error(Exception e) {
+        e.printStackTrace();
+        return new ApiResult<>(500, e.getMessage(), null);
+    }
+
     public static <R> ApiResult<R> error(String msg) {
         return new ApiResult<>(500, msg, null);
     }

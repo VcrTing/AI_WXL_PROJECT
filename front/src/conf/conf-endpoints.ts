@@ -28,7 +28,9 @@ export const NET_ENDPOINTS_APP = <ONE>{
 }
 
 export const NET_ENDPOINTS_BKD = <ONE>{
-    'login': 'auth/login'
+    'login': 'auth/login',
+    // 工资
+    'salary_type': 'money/salary/salary-types'
 }
 
 const __BUSINRSS_SQL = <ONE>{

@@ -53,6 +53,7 @@ const __PAN_DIE_ANI_TIME = 362
 // 自带杀掉 PAN
 const close = async (idx: number) => {
     const pan: ElePan | undefined = await ioc(idx)
+    console.log('关掉 PAN =', pan)
     pan ? __close(pan) : undefined
 }
 

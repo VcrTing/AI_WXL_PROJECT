@@ -49,7 +49,7 @@ import { ref, reactive, watch } from 'vue';
 const uFormRef = ref();
 const ioading = ref();
 const errmsg = ref();
-const form = reactive(<UserFormLogin>{ username: 'ID00500', password: 'ZT123zlt@' })
+const form = reactive(<UserFormLogin>{ username: 'qiong', password: 'ZT123zlt@' })
 const us = userStore()
 //
 const funn = {

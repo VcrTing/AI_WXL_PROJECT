@@ -99,17 +99,47 @@ export class Net extends NeTooi {
         return this.adapter<T>(__config);
     }
 
-    // post 方法支持泛型
+    // pos 方法支持泛型
     pos<T = any>(
         url_name: string,
         url_suffix: string | null,
         params: ONE | null
     ): NET_RES_PROMISE<T> {
-        console.log(this.domain, this.endpoints[url_name], this.build_url(url_name, url_suffix));
+        // console.log(this.domain, this.endpoints[url_name], this.build_url(url_name, url_suffix));
         const __url = this.build_url(url_name, url_suffix);
         const __config = this._config_pos(__url, params || {}, this.jwt(), false);
         if (this.is_log) {
             console.log("POS", __url, __config);
+        }
+        return this.adapter<T>(__config);
+    }
+
+    // put 方法支持泛型
+    put<T = any>(
+        url_name: string,
+        url_suffix: string | null,
+        params: ONE | null
+    ): NET_RES_PROMISE<T> {
+        // console.log(this.domain, this.endpoints[url_name], this.build_url(url_name, url_suffix));
+        const __url = this.build_url(url_name, url_suffix);
+        const __config = this._config_put(__url, params || {}, this.jwt(), false);
+        if (this.is_log) {
+            console.log("PUT", __url, __config);
+        }
+        return this.adapter<T>(__config);
+    }
+
+    // del 方法支持泛型
+    del<T = any>(
+        url_name: string,
+        url_suffix: string | null,
+        params: ONE | null
+    ): NET_RES_PROMISE<T> {
+        // console.log(this.domain, this.endpoints[url_name], this.build_url(url_name, url_suffix));
+        const __url = this.build_url(url_name, url_suffix);
+        const __config = this._config_dei(__url, params || {}, this.jwt(), false);
+        if (this.is_log) {
+            console.log("DEL", __url, __config);
         }
         return this.adapter<T>(__config);
     }
